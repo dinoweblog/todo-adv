@@ -1,0 +1,31 @@
+{
+  "Users": [
+    {
+      "name": "gh",
+      "age": "7",
+      "dob": "2022-03-30",
+      "residence": "rtgg",
+      "address": "fgfgd",
+      "pincode": "6675",
+      "id": 1
+    },
+    {
+      "name": "hh",
+      "age": "44",
+      "dob": "2022-04-27",
+      "residence": "jkj",
+      "address": "nbjb",
+      "pincode": "4544",
+      "id": 2
+    },
+    {
+      "name": "j",
+      "age": "4",
+      "dob": "2022-04-07",
+      "residence": "4",
+      "address": "4",
+      "pincode": "4",
+      "id": 3
+    }
+  ]
+}
