@@ -55,13 +55,14 @@ export const Users = () => {
   }, []);
 
   const showUsers = () => {
-    fetch("https://employees-dino-app.herokuapp.com/Users")
+    fetch("https://employees-dino-app.herokuapp.com/users")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((error) => {
         console.log(error.message);
       });
   };
+
   return (
     <Div>
       <div>

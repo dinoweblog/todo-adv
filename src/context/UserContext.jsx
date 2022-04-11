@@ -32,7 +32,7 @@ const reducer = (state, action) => {
 export const UserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleSubmit = () => {
-    fetch(`https://employees-dino-app.herokuapp.com/Users`, {
+    fetch(`https://employees-dino-app.herokuapp.com/users`, {
       method: "POST",
       body: JSON.stringify(state),
       headers: {
