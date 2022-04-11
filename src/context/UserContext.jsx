@@ -1,4 +1,4 @@
-import { createContext, useReducer, useState } from "react";
+import { createContext, useReducer } from "react";
 export const UserContext = createContext();
 
 const initialState = {
@@ -29,25 +29,10 @@ const reducer = (state, action) => {
   }
 };
 
-// function Counter({ initialCount }) {
-
-//   return (
-//     <>
-//       Count: {state.count}
-//       <button
-//         onClick={() => dispatch({ type: "reset", payload: initialCount })}
-//       >
-//         Reset
-//       </button>
-//       <button onClick={() => dispatch({ type: "decrement" })}>-</button>
-//       <button onClick={() => dispatch({ type: "increment" })}>+</button>
-//     </>
-//   );
-// }
 export const UserContextProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
   const handleSubmit = () => {
-    fetch(`http://localhost:3000/Users`, {
+    fetch(`https://employees-dino-app.herokuapp.com/Users`, {
       method: "POST",
       body: JSON.stringify(state),
       headers: {
@@ -57,7 +42,7 @@ export const UserContextProvider = ({ children }) => {
       .then((res) => res.json())
       .catch((error) => console.log(error));
   };
-  console.log(state);
+
   const { name, age, dob, residence, address, pincode } = state;
   console.log(state);
   return (

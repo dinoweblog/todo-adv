@@ -2,52 +2,52 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
-export const Users = () => {
-  const Div = styled.div`
-    width: 60%;
-    margin: auto;
-    margin-top: 40px;
-    div {
-      margin: 20px 0;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      i {
-        font-size: 30px;
-        cursor: pointer;
-        margin-right: 40px;
-        color: white;
-        transition: 0.5s;
-        :hover {
-          color: tomato;
-        }
+const Div = styled.div`
+  width: 60%;
+  margin: auto;
+  margin-top: 40px;
+  div {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      font-size: 30px;
+      cursor: pointer;
+      margin-right: 40px;
+      color: white;
+      transition: 0.5s;
+      :hover {
+        color: tomato;
       }
     }
-    #users {
-      font-family: Arial, Helvetica, sans-serif;
-      border-collapse: collapse;
-      width: 100%;
-    }
-    #users td,
-    #users th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
+  }
+  #users {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  #users td,
+  #users th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
 
-    #users tr:nth-child(even) {
-      /* background-color: #f2f2f2; */
-    }
+  #users tr:nth-child(even) {
+    /* background-color: #f2f2f2; */
+  }
 
-    #users th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #00c897;
-      color: white;
-    }
-  `;
+  #users th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #00c897;
+    color: white;
+  }
+`;
 
+export const Users = () => {
   const [data, setData] = useState([]);
   const Navigate = useNavigate();
   useEffect(() => {
@@ -55,7 +55,7 @@ export const Users = () => {
   }, []);
 
   const showUsers = () => {
-    fetch("http://localhost:3000/Users")
+    fetch("https://employees-dino-app.herokuapp.com/Users")
       .then((res) => res.json())
       .then((data) => setData(data))
       .catch((error) => {
@@ -69,7 +69,7 @@ export const Users = () => {
           onClick={() => {
             Navigate("/");
           }}
-          class="bx bxs-home"
+          className="bx bxs-home"
         ></i>
         <h1>Users Details</h1>
       </div>
